@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-paper: #F5F3EE;
+  --color-surface: #FFFFFF;
+  --color-ink: #16160F;
+  --color-ink-soft: #4A4A40;
+  --color-muted: #8F8C80;
+  --color-line: #16160F;
+  --color-hair: #DEDACD;
+  --color-tint: #ECE9DF;
+  --color-good: #16160F;
+  --color-success-bg: #E4F5E8;
+  --color-success-ink: #1E5C3B;
+  --color-warn-bg: #FFF2C7;
+  --color-warn-ink: #6B4A00;
+  --color-bad-bg: #FCE1E0;
+  --color-bad-ink: #7A1F1F;
+  --color-success-strong: #2E7D4A;
+  --color-warn-strong: #D7A51F;
+  --color-bad-strong: #C74B4B;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  border-color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.scribble-underline {
+  position: relative;
+  display: inline-block;
+}
+.scribble-underline::after {
+  content: '';
+  position: absolute;
+  left: -2px; right: -2px; bottom: -4px;
+  height: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0 6 Q 8 0, 16 6 T 32 6 T 48 6 T 64 6 T 80 6 T 100 6' stroke='%2316160F' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 32px 6px;
+}
+
+.hand-border {
+  border: 2px solid var(--color-line);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-rise {
+  animation: rise 0.35s ease-out;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-hair); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
+
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    color: #16160F !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  aside, header, nav, .print\:hidden, .print-hidden {
+    display: none !important;
+  }
+
+  main,
+  main > div,
+  #root {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+
+  #invoice-print,
+  .invoice-print {
+    border: 1px solid #16160F !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: white !important;
+    padding: 18mm !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .hand-border {
+    border-color: #16160F !important;
+  }
+}
