@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.UUID;
 
-/** Reads the Bearer token, resolves the user, and populates the security context - the equivalent of the old Express `protect` middleware. */
+/** Reads the Bearer token, resolves the user, and populates the security context. */
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {

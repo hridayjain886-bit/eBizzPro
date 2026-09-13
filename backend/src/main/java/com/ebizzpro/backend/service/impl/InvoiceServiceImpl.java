@@ -126,8 +126,7 @@ public class InvoiceServiceImpl implements InvoiceService {
         invoice.setStatus(newStatus);
         Invoice saved = invoiceRepository.save(invoice);
 
-        // Cancelling an invoice restocks the items; un-cancelling deducts them again -
-        // mirrors the $inc adjustments the old Express routes made on status change.
+        // Cancelling an invoice restocks the items; un-cancelling deducts them again.
         if (previousStatus != InvoiceStatus.CANCELLED && newStatus == InvoiceStatus.CANCELLED) {
             adjustStockForItems(userId, saved, BigDecimal.ONE);
         } else if (previousStatus == InvoiceStatus.CANCELLED && newStatus != InvoiceStatus.CANCELLED) {

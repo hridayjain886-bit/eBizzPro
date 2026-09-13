@@ -1,6 +1,6 @@
 # eBizz Pro — Backend (Spring Boot)
 
-GST Billing and Inventory Management System backend, rebuilt in Spring Boot + PostgreSQL (migrated from the original Node.js/Express + MongoDB implementation).
+GST Billing and Inventory Management System backend built with Spring Boot and PostgreSQL.
 
 ## Stack
 
@@ -34,7 +34,7 @@ The API starts on `http://localhost:8080`. Flyway applies the schema in `src/mai
 
 ## API surface
 
-Same routes as the original Express API, under `/api`:
+REST endpoints under `/api`:
 
 - `POST /api/auth/register`, `/verify-email`, `/resend-otp`, `/login`, `/google`
 - `GET /api/auth/me`, `PATCH /api/auth/profile`

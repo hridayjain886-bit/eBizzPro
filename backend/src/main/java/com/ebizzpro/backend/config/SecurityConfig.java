@@ -29,7 +29,8 @@ public class SecurityConfig {
             "/api/auth/register", "/api/auth/verify-email", "/api/auth/resend-otp",
             "/api/auth/login", "/api/auth/google",
             "/api/auth/forgot-password", "/api/auth/verify-reset-otp", "/api/auth/reset-password",
-            "/swagger-ui/**", "/v3/api-docs/**"
+            "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**",
+            "/swagger-resources/**", "/webjars/**"
     };
 
     @Bean

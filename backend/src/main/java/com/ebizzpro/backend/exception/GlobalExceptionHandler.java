@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
-/** Central error handler - equivalent of the old Express notFound/errorHandler middleware, but type-safe. */
+/** Central error handler for API exceptions and validation errors. */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

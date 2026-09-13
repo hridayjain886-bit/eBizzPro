@@ -9,7 +9,7 @@ public final class OtpGenerator {
     private OtpGenerator() {
     }
 
-    /** Generates a 6-digit numeric OTP, matching the previous Node implementation. */
+    /** Generates a 6-digit numeric OTP. */
     public static String generate() {
         int otp = 100000 + RANDOM.nextInt(900000);
         return String.valueOf(otp);
